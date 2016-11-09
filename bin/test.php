@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-use Lavoiesl\PhpBenchmark\Benchmark;
-
 require __DIR__.'/../vendor/autoload.php';
+
+use Lavoiesl\PhpBenchmark\Benchmark;
 
 // warm up...
 \Illuminate\Support\Str::startsWith('Hello world!', 'Hello');
