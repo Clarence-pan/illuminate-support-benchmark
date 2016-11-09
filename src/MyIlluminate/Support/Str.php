@@ -87,12 +87,10 @@ class Str
      */
     public static function endsWith($haystack, $needles)
     {
-        $hayStackLen = strlen($haystack);
-
         foreach ((array) $needles as $needle) {
             $needle = (string)$needle;
             $needleLen = strlen($needle);
-            if ($needleLen <= $hayStackLen && substr_compare($haystack, $needle, $hayStackLen - $needleLen, $needleLen) === 0) {
+            if (substr_compare($haystack, $needle, strlen($haystack) - $needleLen, $needleLen) === 0) {
                 return true;
             }
         }
@@ -431,11 +429,9 @@ class Str
      */
     public static function startsWith($haystack, $needles)
     {
-        $haystackLen = strlen($haystack);
-
         foreach ((array) $needles as $needle) {
             $needleLen = strlen($needle);
-            if ($needleLen > 0 && $needleLen <= $haystackLen &&  strncmp($haystack, $needle, $needleLen) === 0) {
+            if ($needleLen > 0 && strncmp($haystack, $needle, $needleLen) === 0) {
                 return true;
             }
         }
