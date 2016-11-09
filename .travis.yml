@@ -6,7 +6,9 @@ php:
   - 5.5
 
 before_script:
-  - composer self-update && composer install
+  - composer self-update
+  - composer install
+  - composer dumpautoload
 
 script:
   - php bin/test.php
